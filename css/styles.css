@@ -725,6 +725,16 @@ button:focus-visible {
   z-index: 12;
   background: var(--black);
   border-top: 2px solid var(--orange);
+  transform: translateY(100%);
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform 0.28s ease, visibility 0.28s ease;
+}
+
+.mobile-cta.is-visible {
+  transform: translateY(0);
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .mobile-cta a {
@@ -781,7 +791,8 @@ button:focus-visible {
   }
 
   .btn,
-  .gallery-item img {
+  .gallery-item img,
+  .mobile-cta {
     transition: none;
   }
 }

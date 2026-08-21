@@ -152,3 +152,32 @@ document.addEventListener("keydown", (event) => {
     lightboxImg.src = "";
   }
 });
+
+const mobileCta = document.querySelector(".mobile-cta");
+const heroCtas = document.querySelector(".hero-mobile-ctas");
+const siteHeader = document.querySelector(".site-header");
+
+function setMobileCtaVisible(visible) {
+  if (!mobileCta) return;
+  mobileCta.classList.toggle("is-visible", visible);
+  mobileCta.toggleAttribute("aria-hidden", !visible);
+  mobileCta.inert = !visible;
+}
+
+if (mobileCta && heroCtas && "IntersectionObserver" in window) {
+  const headerOffset = siteHeader ? siteHeader.offsetHeight : 84;
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      setMobileCtaVisible(!entry.isIntersecting);
+    },
+    {
+      threshold: 0,
+      rootMargin: `-${headerOffset}px 0px 0px 0px`,
+    }
+  );
+
+  observer.observe(heroCtas);
+} else {
+  setMobileCtaVisible(true);
+}
