@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 140" role="img" aria-label="Ridgeway Tree Co.">
+  <!-- Transparent background  tree + wordmark only -->
+  <g fill="#52d68a">
+    <path d="M72 12 L108 68 H90 L112 100 H96 L114 128 H30 L48 100 H32 L54 68 H36 Z"/>
+    <rect x="64" y="118" width="16" height="14" rx="2"/>
+  </g>
+  <g fill="#ffffff" font-family="Oswald, Barlow Condensed, Arial Narrow, sans-serif" font-weight="700">
+    <text x="140" y="72" font-size="56" letter-spacing="0.04em">RIDGEWAY</text>
+    <text x="142" y="118" font-size="34" letter-spacing="0.18em">TREE CO.</text>
+  </g>
+</svg>
