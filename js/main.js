@@ -1,9 +1,9 @@
 const QUOTE_EMAIL = "";
-// Paste Dewey's quote inbox here when you have it, e.g. "quotes@deweystumpgrinding.com"
+// Paste Ridgeway's quote inbox here when you have it, e.g. "quotes@ridgewaytreeco.com"
 // Form submissions will then be emailed automatically via FormSubmit.
 
-const PHONE_E164 = "+17165980729";
-const PHONE_DISPLAY = "716-598-0729";
+const PHONE_E164 = "+15550104488";
+const PHONE_DISPLAY = "555-010-4488";
 
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = String(new Date().getFullYear());
@@ -18,7 +18,7 @@ function setStatus(form, message, kind) {
 
 function buildMessage(data) {
   return [
-    "New stump grinding quote request",
+    "New tree work quote request",
     `Name: ${data.name}`,
     `Phone: ${data.phone}`,
     `Email: ${data.email || "not provided"}`,
@@ -43,7 +43,7 @@ async function sendQuote(data) {
       Accept: "application/json",
     },
     body: JSON.stringify({
-      _subject: `Stump grinding quote — ${data.name} — ${data.location}`,
+      _subject: `Tree work quote — ${data.name} — ${data.location}`,
       name: data.name,
       phone: data.phone,
       email: data.email,
@@ -90,7 +90,7 @@ document.querySelectorAll(".quote-form").forEach((form) => {
       if (result.emailed) {
         setStatus(
           form,
-          `Got it. Dewey will follow up soon — or call/text ${PHONE_DISPLAY} anytime.`,
+          `Got it. Ridgeway will follow up soon — or call/text ${PHONE_DISPLAY} anytime.`,
           "ok"
         );
         return;
@@ -105,7 +105,7 @@ document.querySelectorAll(".quote-form").forEach((form) => {
       const textLink = document.createElement("a");
       textLink.className = "btn btn-primary btn-full";
       textLink.href = smsHref(payload);
-      textLink.textContent = "Text this quote to Dewey";
+      textLink.textContent = "Text this quote to Ridgeway";
       textLink.style.marginTop = "8px";
       if (!form.querySelector(".js-text-fallback")) {
         textLink.classList.add("js-text-fallback");
